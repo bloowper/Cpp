@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tomek/Documents/C++/sfml/p4/Game/Window.h
+SFML/System.hpp
+-
+SFML/Graphics/RenderWindow.hpp
+-
+
+/home/tomek/Documents/C++/sfml/p4/Game/cmake_modules/Game.cpp
+SFML/Graphics/Sprite.hpp
+-
+SFML/Graphics/Texture.hpp
+-
+Game.h
+/home/tomek/Documents/C++/sfml/p4/Game/cmake_modules/Game.h
+Game.h
+/home/tomek/Documents/C++/sfml/p4/Game/cmake_modules/Game.h
+
+/home/tomek/Documents/C++/sfml/p4/Game/cmake_modules/Game.h
+SFML/Graphics/CircleShape.hpp
+-
+SFML/Graphics.hpp
+-
+../Window.h
+/home/tomek/Documents/C++/sfml/p4/Game/Window.h
+
+/home/tomek/Documents/C++/sfml/p4/Game/cmake_modules/main.cpp
+main.h
+/home/tomek/Documents/C++/sfml/p4/Game/cmake_modules/main.h
+Game.h
+/home/tomek/Documents/C++/sfml/p4/Game/cmake_modules/Game.h
+
+/home/tomek/Documents/C++/sfml/p4/Game/cmake_modules/main.h
+
