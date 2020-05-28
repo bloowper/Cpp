@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tomek/Documents/C++/myVector/main.cpp
+iostream
+-
+myVector.h
+/home/tomek/Documents/C++/myVector/myVector.h
+
+/home/tomek/Documents/C++/myVector/myVector.h
+initializer_list
+-
+myVectorException.h
+/home/tomek/Documents/C++/myVector/myVectorException.h
+
+/home/tomek/Documents/C++/myVector/myVectorException.h
+
