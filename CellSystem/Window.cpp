@@ -55,8 +55,7 @@ void Window::Update(){
     }
 }
 
-///////////test
-//test
+
 std::shared_ptr<sf::RenderWindow> Window::renderwindow() {
     std::shared_ptr<sf::RenderWindow> to_return{&m_window};
     return to_return;

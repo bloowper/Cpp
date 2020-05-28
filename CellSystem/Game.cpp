@@ -8,11 +8,16 @@
 #include "Game.h"
 #include "Game.h"
 #include <algorithm>
+#include "ObiektFunkcyjnyOtoczenia.h"
+
+//TO DO
+//1 poprawic kontenery typu vector zeby mialy wstepny rozmiar przystajacy do maksymalnego w trakcie uzywania.
+//zeby pozbyc sie przelokowywania pamieci i troche dzieki temu to zoptymalizowac.
 
 
 
 
-Game::Game(): m_window("game of live ver bieda edition", sf::Vector2u(2000,2000)){
+Game::Game(): m_window("simple psedu cell simulation", sf::Vector2u(2000,2000)){
     RestartClock();
     srand(time(NULL));
 
@@ -33,16 +38,20 @@ Game::Game(): m_window("game of live ver bieda edition", sf::Vector2u(2000,2000)
         }
     }
 
+    //utworzenie szkielka zegarowego i zywej komorki
     std::pair<int,int> poczatkowa{n_of_blocks/2,n_of_blocks/2};
     blockmap[poczatkowa]->setAsLifeCell();
 
-    const std::vector<std::pair<int, int>> &neighborhood = returnNeighborhood(poczatkowa, 20);
-    for(auto c:neighborhood)
-        blockmap[c]->setAsObstacleCell();
+    ObiektFunkcyjnyOtoczenia promien15{15};
+    ObiektFunkcyjnyOtoczenia promien20{20};
 
-    const std::vector<std::pair<int, int>> &neighborhood1 = returnNeighborhood(poczatkowa, 15);
+    const std::vector<std::pair<int, int>> &neighborhood = promien20(poczatkowa);
+    for(auto c:neighborhood)
+        if(c!=poczatkowa )blockmap[c]->setAsObstacleCell();
+
+    const std::vector<std::pair<int, int>> &neighborhood1 = promien15(poczatkowa);
     for(auto c:neighborhood1)
-        blockmap[c]->setAsFloorCell();
+        if(c!=poczatkowa)blockmap[c]->setAsFloorCell();
 
     for(auto c:neighborhood)
     {
@@ -52,7 +61,24 @@ Game::Game(): m_window("game of live ver bieda edition", sf::Vector2u(2000,2000)
             blockmap[std::make_pair(c.first+1,c.second)]->setAsFloorCell();
         }
     }
-    
+
+    ObiektFunkcyjnyOtoczenia promien3{10};
+    std::vector<std::pair<int, int>> test = promien3(std::make_pair(2, 2));
+    for(auto &obj:test)
+    {
+        try{
+            this->blockmap.at(obj)->setAsObstacleCell();
+        }
+        catch (std::out_of_range){
+            continue;
+        }
+
+    }
+
+
+
+
+
 
 }
 

@@ -3,7 +3,7 @@ project(Game)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES Window.cpp Window.h main.cpp main.h Game.cpp cell.cpp cell.h abstractCell.h)
+set(SOURCE_FILES Window.cpp Window.h main.cpp main.h Game.cpp cell.cpp cell.h abstractCell.h ObiektFunkcyjnyOtoczenia.h)
 add_executable(Game ${SOURCE_FILES} Window.cpp Window.h)
 
 # Detect and add SFML
