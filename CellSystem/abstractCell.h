@@ -4,9 +4,8 @@
 
 #ifndef GAME_ABSTRACTCELL_H
 #define GAME_ABSTRACTCELL_H
-
-
 #include <utility>
+
 
 class abstractCell {
 
@@ -25,8 +24,9 @@ public:
     virtual bool random_life_event()= 0;
     virtual bool random_death_event()= 0;
     virtual void cycle()= 0;
-
+    enum unitTypes{floor,life,death,obstacle};
 protected:
+    int type;
     bool lifeCell;
     bool deathCell;
     bool obstacleCell;
@@ -35,7 +35,9 @@ protected:
     int pointsForLife;
     int maxPoints;
     unsigned cycles;
+
 };
+
 
 
 #endif //GAME_ABSTRACTCELL_H

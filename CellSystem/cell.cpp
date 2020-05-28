@@ -49,6 +49,12 @@ bool isInRadius(std::pair<int, int> x, std::pair<int, int> y, double max_distanc
 
 int randomInBaund(int min, int max)
 {
+    if(min>max)//gdzies popelnilem blad i czasami dostawal min>max
+    {
+        int temp = min;
+        min = max;
+        max = temp;
+    }
         int  output = min + (rand() % static_cast<int>(max - min + 1));
         return output;
 }
@@ -57,19 +63,19 @@ int randomInBaund(int min, int max)
 
 bool cell::isFloorCell()
 {
-    return floorCell;
+    return type == abstractCell::unitTypes::floor;
 }
 
 bool cell::isLifeCell() {
-    return lifeCell;
+    return type == abstractCell::unitTypes::life;
 }
 
 bool cell::isObstacleCell() {
-    return obstacleCell;
+    return type == abstractCell::unitTypes::obstacle;
 }
 
 bool cell::isDeathCell() {
-    return deathCell;
+    return type == abstractCell::unitTypes::death;
 }
 
 
@@ -82,6 +88,8 @@ cell::cell():sf::RectangleShape()
     pointsForLife = 0;
     maxPoints = 100;
     cycles = 0;
+
+    type = abstractCell::unitTypes::floor;
     setOutlineThickness(1);
     setOutlineColor(sf::Color::Black);
     setFillColor(sf::Color::Magenta);
@@ -154,48 +162,40 @@ unsigned int cell::nOfCycle() const {
 }
 
 void cell::setAsLifeCell() {
-     lifeCell = true;
-     deathCell = false;
-     obstacleCell = false;
-     floorCell = false;
+    if(this->isFloorCell())
+    {
     pointsForDie = 0;
     pointsForLife = 0;
     cycles=0;
+
+    type = abstractCell::unitTypes::life;
     this->setFillColor(zywa);
+    }
 }
 
 void cell::setAsDeathCell() {
-    lifeCell = false;
-    deathCell = true ;
-    obstacleCell = false;
-    floorCell = false;
     pointsForDie = 0;
     pointsForLife = 0;
     cycles=0;
+    type = abstractCell::unitTypes::death;
     this->setFillColor(martwa);
 }
 
 void cell::setAsObstacleCell() {
-    lifeCell = false;
-    deathCell = false ;
-    obstacleCell = true;
-    floorCell = false;
     pointsForDie = 0;
     pointsForLife = 0;
     cycles=0;
     this->setFillColor(przeszkoda);
+    type = abstractCell::unitTypes::obstacle;
 }
 
 
 void cell::setAsFloorCell()
 {
-    lifeCell = false;
-    deathCell = false ;
-    obstacleCell = false;
-    floorCell = true;
     pointsForDie = 0;
     pointsForLife = 0;
     cycles=0;
+    type = abstractCell::unitTypes::floor;
     this->setFillColor(podloze);
 }
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.cpp
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.cpp
 SFML/Graphics/Sprite.hpp
 -
 SFML/Graphics/Texture.hpp
@@ -14,27 +14,27 @@ SFML/Graphics/Texture.hpp
 boost/random.hpp
 -
 Game.h
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.h
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.h
 Game.h
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.h
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.h
 algorithm
 -
 
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.h
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.h
 SFML/Graphics/CircleShape.hpp
 -
 SFML/Graphics.hpp
 -
 Window.h
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Window.h
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Window.h
 memory
 -
 vector
 -
 cell.h
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.h
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cell.h
 
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Window.h
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Window.h
 SFML/System.hpp
 -
 SFML/Graphics/RenderWindow.hpp
@@ -42,33 +42,15 @@ SFML/Graphics/RenderWindow.hpp
 memory
 -
 
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/abstractCell.h
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/abstractCell.h
 utility
 -
 
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.cpp
-cell.h
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.h
-math.h
--
-boost/multiprecision/cpp_int.hpp
--
-boost/random.hpp
--
-
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.h
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cell.h
 SFML/Graphics.hpp
 -
 vector
 -
 abstractCell.h
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/abstractCell.h
-
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/main.cpp
-main.h
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/main.h
-Game.h
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.h
-
-/home/tomek/Documents/C++/sfml/game_of_life-test/Game/main.h
+/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/abstractCell.h
 

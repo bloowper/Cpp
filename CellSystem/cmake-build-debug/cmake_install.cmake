@@ -1,4 +1,4 @@
-# Install script for directory: /home/tomek/Documents/C++/sfml/game_of_life-test/Game
+# Install script for directory: /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

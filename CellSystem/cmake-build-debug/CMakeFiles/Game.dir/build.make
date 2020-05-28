@@ -43,10 +43,10 @@ RM = /snap/clion/112/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tomek/Documents/C++/sfml/game_of_life-test/Game
+CMAKE_SOURCE_DIR = /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug
+CMAKE_BINARY_DIR = /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Game.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/Game.dir/flags.make
 
 CMakeFiles/Game.dir/Window.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/Window.cpp.o: ../Window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Game.dir/Window.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Window.cpp.o -c /home/tomek/Documents/C++/sfml/game_of_life-test/Game/Window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Game.dir/Window.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Window.cpp.o -c /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Window.cpp
 
 CMakeFiles/Game.dir/Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/Window.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomek/Documents/C++/sfml/game_of_life-test/Game/Window.cpp > CMakeFiles/Game.dir/Window.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Window.cpp > CMakeFiles/Game.dir/Window.cpp.i
 
 CMakeFiles/Game.dir/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/Window.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomek/Documents/C++/sfml/game_of_life-test/Game/Window.cpp -o CMakeFiles/Game.dir/Window.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Window.cpp -o CMakeFiles/Game.dir/Window.cpp.s
 
 CMakeFiles/Game.dir/main.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Game.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/main.cpp.o -c /home/tomek/Documents/C++/sfml/game_of_life-test/Game/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Game.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/main.cpp.o -c /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/main.cpp
 
 CMakeFiles/Game.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomek/Documents/C++/sfml/game_of_life-test/Game/main.cpp > CMakeFiles/Game.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/main.cpp > CMakeFiles/Game.dir/main.cpp.i
 
 CMakeFiles/Game.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomek/Documents/C++/sfml/game_of_life-test/Game/main.cpp -o CMakeFiles/Game.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/main.cpp -o CMakeFiles/Game.dir/main.cpp.s
 
 CMakeFiles/Game.dir/Game.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/Game.cpp.o: ../Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Game.dir/Game.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Game.cpp.o -c /home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Game.dir/Game.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/Game.cpp.o -c /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.cpp
 
 CMakeFiles/Game.dir/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/Game.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.cpp > CMakeFiles/Game.dir/Game.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.cpp > CMakeFiles/Game.dir/Game.cpp.i
 
 CMakeFiles/Game.dir/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/Game.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.cpp -o CMakeFiles/Game.dir/Game.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.cpp -o CMakeFiles/Game.dir/Game.cpp.s
 
 CMakeFiles/Game.dir/cell.cpp.o: CMakeFiles/Game.dir/flags.make
 CMakeFiles/Game.dir/cell.cpp.o: ../cell.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Game.dir/cell.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/cell.cpp.o -c /home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Game.dir/cell.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game.dir/cell.cpp.o -c /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cell.cpp
 
 CMakeFiles/Game.dir/cell.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game.dir/cell.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.cpp > CMakeFiles/Game.dir/cell.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cell.cpp > CMakeFiles/Game.dir/cell.cpp.i
 
 CMakeFiles/Game.dir/cell.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game.dir/cell.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.cpp -o CMakeFiles/Game.dir/cell.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cell.cpp -o CMakeFiles/Game.dir/cell.cpp.s
 
 # Object files for target Game
 Game_OBJECTS = \
@@ -130,7 +130,7 @@ Game: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 Game: /usr/lib/x86_64-linux-gnu/libsfml-network.so
 Game: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 Game: CMakeFiles/Game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Game.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -143,6 +143,6 @@ CMakeFiles/Game.dir/clean:
 .PHONY : CMakeFiles/Game.dir/clean
 
 CMakeFiles/Game.dir/depend:
-	cd /home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tomek/Documents/C++/sfml/game_of_life-test/Game /home/tomek/Documents/C++/sfml/game_of_life-test/Game /home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug /home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug /home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles/Game.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug /home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles/Game.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Game.dir/depend
 

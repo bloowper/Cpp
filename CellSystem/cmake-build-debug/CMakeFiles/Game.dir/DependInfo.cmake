@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.cpp" "/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles/Game.dir/Game.cpp.o"
-  "/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Window.cpp" "/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles/Game.dir/Window.cpp.o"
-  "/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.cpp" "/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles/Game.dir/cell.cpp.o"
-  "/home/tomek/Documents/C++/sfml/game_of_life-test/Game/main.cpp" "/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o"
+  "/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.cpp" "/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles/Game.dir/Game.cpp.o"
+  "/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Window.cpp" "/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles/Game.dir/Window.cpp.o"
+  "/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cell.cpp" "/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles/Game.dir/cell.cpp.o"
+  "/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/main.cpp" "/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/CMakeFiles/Game.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

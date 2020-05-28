@@ -33,9 +33,26 @@ Game::Game(): m_window("game of live ver bieda edition", sf::Vector2u(2000,2000)
         }
     }
 
-    blockmap[std::make_pair(n_of_blocks / 2, n_of_blocks / 2)]->setAsLifeCell();
-    blockmap[std::make_pair(30,30)]->setAsObstacleCell();
+    std::pair<int,int> poczatkowa{n_of_blocks/2,n_of_blocks/2};
+    blockmap[poczatkowa]->setAsLifeCell();
 
+    const std::vector<std::pair<int, int>> &neighborhood = returnNeighborhood(poczatkowa, 20);
+    for(auto c:neighborhood)
+        blockmap[c]->setAsObstacleCell();
+
+    const std::vector<std::pair<int, int>> &neighborhood1 = returnNeighborhood(poczatkowa, 15);
+    for(auto c:neighborhood1)
+        blockmap[c]->setAsFloorCell();
+
+    for(auto c:neighborhood)
+    {
+        if(c.first==n_of_blocks/2 && c.second>n_of_blocks/2)
+        {
+            blockmap[c]->setAsFloorCell();
+            blockmap[std::make_pair(c.first+1,c.second)]->setAsFloorCell();
+        }
+    }
+    
 
 }
 
@@ -63,33 +80,35 @@ void Game::Update() {
 
         if(blockmap[key]->isLifeCell())
         {
-            int zasieg=4;
+            int zasieg=3;
             const std::vector<std::pair<int, int>> &neighborhood = returnNeighborhood(key, zasieg);
             for(auto keyN:neighborhood)
             {
                 const std::vector<std::pair<int, int>>::const_iterator &iterator = std::find(extractKeys.begin(),
                                                                                              extractKeys.end(), keyN);
-                if(iterator!=extractKeys.end())
+                if(iterator!=extractKeys.end() && blockmap[keyN]->isFloorCell()== true)
                 {
                     int min=0,max=2;
                     blockmap[keyN]->changePointsForLifeForm(randomInBaund(min,max));
-                    
+
                 }
             }
 
-            int minimalna_liczba_cykli = 20;
-            int minD=0,maxD=4;
+            int minimalna_liczba_cykli = 30;
+            int minD=0,maxD=10;
             if(blockmap[key]->nOfCycle()>minimalna_liczba_cykli)
             {
                 blockmap[key]->ChangePointsForDeath(randomInBaund(minD,maxD));
             }
-
+            if(blockmap[key]->nOfCycle()>minimalna_liczba_cykli+10)
+            {
+                blockmap[key]->ChangePointsForDeath(randomInBaund(minD,maxD));
+            }
             blockmap[key]->cycle();
         }
-
-        if(blockmap[key]->isDeathCell())
+        else if(blockmap[key]->isDeathCell())
         {
-            int zasieg = 3;
+            int zasieg = 2;
             const std::vector<std::pair<int, int>> &neighborhood = returnNeighborhood(key, zasieg);
             for(auto keyN:neighborhood)
             {
@@ -97,12 +116,17 @@ void Game::Update() {
                                                                                              extractKeys.end(), keyN);
                 if(iterator!=extractKeys.end())
                 {
-                    int min=1,max=3;
+                    int min=5,max=10;
                     if(blockmap[keyN]->isLifeCell())
                     blockmap[keyN]->ChangePointsForDeath(randomInBaund(min,max));
                 }
             }
         }
+        else if(blockmap[key]->isObstacleCell())
+        {
+
+        }
+
 
 
     }
@@ -111,13 +135,14 @@ void Game::Update() {
     for(auto key:extractKeys)
     {
 
+        //
         if(blockmap[key]->random_life_event()==true && blockmap[key]->isFloorCell()==true)
         {
             blockmap[key]->setAsLifeCell();
         }
 
 
-        if(blockmap[key]->random_death_event()==true && blockmap[key]->isLifeCell()==true)
+        if(blockmap[key]->random_death_event()==true && blockmap[key]->isLifeCell()==true )
         {
             blockmap[key]->setAsDeathCell();
         }
