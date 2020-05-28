@@ -14,6 +14,7 @@ template<typename T>
 class myVector {
 public:
     myVector();
+//    myVector(T);
     myVector(unsigned size);
     myVector(std::initializer_list<T> initializerList);
     myVector(myVector&);//coppy constructor
@@ -36,6 +37,7 @@ template<typename T>
 myVector<T>::myVector(unsigned int size)
 :data{new T[size]},maxLenght{size},lenght{0}
 {
+    printf("size constructor invoked \n");
 
 }
 
@@ -43,7 +45,7 @@ template<typename T>
 myVector<T>::myVector()
 :myVector<T>::myVector(20)
 {
-
+    printf("No arg constructor invoked\n");
 }
 
 template<typename T>
@@ -66,12 +68,18 @@ myVector<T>::~myVector()
     printf("deconstructor invoked\n");
     if(maxLenght>0)
     {
-        if(maxLenght>1)
+
+        //tutaj nie do konca rozumiem co sie stalo
+        //mialem dlugo problem z typami bardziej zawansowanymi np dla stringa:
+        //wywolywalo sie usuniecie pojedynczego elementu
+        //i rzucalo blad naruszenia pamieci ;/
+        if(maxLenght>1||sizeof(data)>1)
         delete[] data;
         else
         delete data;
         maxLenght = 0;
         lenght = 0;
+        printf("free up heap memory\n");
     }
 }
 
@@ -103,6 +111,16 @@ myVector<T>::myVector(myVector &l)
     for(int i=0;i<l.lenght;i++)
         data[i]=l.data[i];
 
+}
+
+template<typename T>
+myVector<T>::myVector(myVector &&l)
+:data{l.data}, lenght{l.lenght}, maxLenght{l.maxLenght}
+{
+    printf("Move constructor invoked\n");
+    l.data = nullptr;
+    l.maxLenght = 0;
+    l.lenght = 0;
 }
 
 
