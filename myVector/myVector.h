@@ -3,6 +3,7 @@
 //
 
 #include <initializer_list>
+#include <cstdio>
 #include "myVectorException.h"
 #ifndef MYVECTOR_MYVECTOR_H
 #define MYVECTOR_MYVECTOR_H
@@ -15,6 +16,9 @@ public:
     myVector();
     myVector(unsigned size);
     myVector(std::initializer_list<T> initializerList);
+    myVector(myVector&);//coppy constructor
+    myVector(myVector &&);//move constructor
+
     virtual ~myVector();
     T& operator[](int index);
     T* begin();
@@ -46,6 +50,7 @@ template<typename T>
 myVector<T>::myVector(std::initializer_list<T> initializerList)
 :myVector<T>::myVector(initializerList.size())
 {
+    printf("std::initializer list constructor invoked \n");
     lenght = initializerList.size();
     int i=0;
     for( const T *initP = initializerList.begin();initP!=initializerList.end();initP++)
@@ -58,7 +63,8 @@ myVector<T>::myVector(std::initializer_list<T> initializerList)
 template<typename T>
 myVector<T>::~myVector()
 {
-    if(maxLenght>0||sizeof(data)>0)
+    printf("deconstructor invoked\n");
+    if(maxLenght>0)
     {
         if(maxLenght>1)
         delete[] data;
@@ -71,6 +77,7 @@ myVector<T>::~myVector()
 
 template<typename T>
 T &myVector<T>::operator[](int index) {
+    printf("operator [(int)] invoked\n");
     if(index<0 || index>lenght)
     {
         throw outOfBound();
@@ -86,6 +93,16 @@ T *myVector<T>::begin() {
 template<typename T>
 T *myVector<T>::end() {
     return &data[lenght];
+}
+
+template<typename T>
+myVector<T>::myVector(myVector &l)
+:data{new T[l.maxLenght]}, lenght{l.lenght}, maxLenght{l.maxLenght}
+{
+    printf("coppy construcotr invoked\n");
+    for(int i=0;i<l.lenght;i++)
+        data[i]=l.data[i];
+
 }
 
 
