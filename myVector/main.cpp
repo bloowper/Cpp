@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "myVector.h"
 using namespace std;
 
@@ -9,6 +10,7 @@ void funkcja_do_testowania_move_constructora(myVector<myVector<string>>&);
 
 int main() {
 
+    //tesotwanie
 
 
     myVector<int> vector{1,2,3,4,5,6};
@@ -60,6 +62,22 @@ int main() {
 
     for(auto obj:vector2)
         cout<<obj<<" ";cout<<" nOfObj "<<vector2.getlenght()<<endl;
+
+    //test konstruktorza przenoszacego
+    cout<<"test obiektow przenoszacych\n";
+    myVector<myVector<string>> vector3;
+    for(int i=0;i<5;i++)
+    {
+        vector3.pushBack(myVector<string>{"hello"," world"," sample"});
+    }
+
+    for(auto obj:vector3)
+    {
+        for(auto ob:obj)
+            cout<<ob<<" "<<"test";
+        cout<<endl;
+    }
+
 
 
 

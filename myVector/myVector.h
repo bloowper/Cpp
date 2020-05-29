@@ -21,6 +21,8 @@ public:
     myVector(myVector &&);//move constructor
     virtual ~myVector();
     T& operator[](int index);
+    myVector<T>& operator=(const myVector<T>& val);
+    myVector<T>& operator=(const myVector<T>&& val);
     T* begin();
     T* end();
     void pushBack(T obj);
@@ -75,11 +77,10 @@ myVector<T>::~myVector()
 
             if (maxLenght > 1 || sizeof(data) > 1)
                 delete[] data;
-            else
+            else if(maxLenght==1)
                 delete data;
         maxLenght = 0;
         lenght = 0;
-        printf("free up heap memory\n");
     }
 }
 
@@ -126,6 +127,7 @@ myVector<T>::myVector(myVector &&l)
 template<typename T>
 void myVector<T>::pushBack(T obj)
 {
+    printf("copy pushback invoked\n");
     if(lenght<maxLenght){
         data[lenght++] = obj;
         printf("push back method invoked\n");
@@ -143,10 +145,37 @@ void myVector<T>::pushBack(T obj)
     }
 }
 
+
 template<typename T>
 unsigned myVector<T>::getlenght(void) {
     return lenght;
 }
+
+template<typename T>
+myVector<T> &myVector<T>::operator=(const myVector<T> &val)
+{
+    printf("coppy assigment operator invoked\n");
+    delete[] data;
+    data = new T[val.maxLenght];
+    maxLenght = val.maxLenght;
+    for(int i=0;i<val.lenght;i++)
+        data[i]=val.data[i];
+    lenght=val.lenght;
+    return *this;
+}
+
+template<typename T>
+myVector<T>& myVector<T>::operator=(const myVector<T> &&val) {
+    delete[] data;
+    data = val.data;
+    lenght=val.lenght;
+    maxLenght=val.maxLenght;
+    val.data= nullptr;
+    val.maxLenght=0;
+    val.lenght=0;
+}
+
+
 
 
 #endif //MYVECTOR_MYVECTOR_H
