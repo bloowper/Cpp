@@ -38,7 +38,6 @@ private:
     int n_of_blocks;
     float size_of_block;
     std::map<std::pair<int,int>,std::shared_ptr<cell>> blockmap;
-    std::vector<std::pair<int,int>> vect_of_pair_cord;
 };
 
 

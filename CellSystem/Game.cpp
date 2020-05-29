@@ -9,6 +9,9 @@
 #include "Game.h"
 #include <algorithm>
 #include "ObiektFunkcyjnyOtoczenia.h"
+#include "myVector.h"
+#include "myVectException.h"
+
 
 //TO DO
 //1 poprawic kontenery typu vector zeby mialy wstepny rozmiar przystajacy do maksymalnego w trakcie uzywania.
@@ -76,7 +79,7 @@ Game::Game(): m_window("simple psedu cell simulation", sf::Vector2u(2000,2000)){
     }
 
 
-
+    myVector<int> vecttest{2,3,4};
 
 
 
