@@ -10,7 +10,7 @@
 #include <algorithm>
 #include "ObiektFunkcyjnyOtoczenia.h"
 #include "myVector.h"
-#include "myVectException.h"
+
 
 
 //TO DO
@@ -78,9 +78,7 @@ Game::Game(): m_window("simple psedu cell simulation", sf::Vector2u(2000,2000)){
 
     }
 
-
-    myVector<int> vecttest{2,3,4};
-
+    myVector<int> proszekurwadzialaj{};
 
 
 }
