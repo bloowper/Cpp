@@ -38,7 +38,6 @@ template<typename T>
 myVector<T>::myVector(unsigned int size)
 :data{new T[size]},maxLenght{size},lenght{0}
 {
-    printf("size constructor invoked \n");
 
 }
 
@@ -46,14 +45,13 @@ template<typename T>
 myVector<T>::myVector()
 :myVector<T>::myVector(20)
 {
-    printf("No arg constructor invoked\n");
+
 }
 
 template<typename T>
 myVector<T>::myVector(std::initializer_list<T> initializerList)
 :myVector<T>::myVector(initializerList.size())
 {
-    printf("std::initializer list constructor invoked \n");
     lenght = initializerList.size();
     int i=0;
     for( const T *initP = initializerList.begin();initP!=initializerList.end();initP++)
@@ -66,7 +64,6 @@ myVector<T>::myVector(std::initializer_list<T> initializerList)
 template<typename T>
 myVector<T>::~myVector()
 {
-    printf("deconstructor invoked\n");
     if(maxLenght>0)
     {
 
@@ -86,7 +83,6 @@ myVector<T>::~myVector()
 
 template<typename T>
 T &myVector<T>::operator[](int index) {
-    printf("operator [(int)] invoked\n");
     if(index<0 || index>lenght)
     {
         throw outOfBound();
@@ -108,7 +104,6 @@ template<typename T>
 myVector<T>::myVector(myVector &l)
 :data{new T[l.maxLenght]}, lenght{l.lenght}, maxLenght{l.maxLenght}
 {
-    printf("coppy construcotr invoked\n");
     for(int i=0;i<l.lenght;i++)
         data[i]=l.data[i];
 
@@ -118,7 +113,6 @@ template<typename T>
 myVector<T>::myVector(myVector &&l)
 :data{l.data}, lenght{l.lenght}, maxLenght{l.maxLenght}
 {
-    printf("Move constructor invoked\n");
     l.data = nullptr;
     l.maxLenght = 0;
     l.lenght = 0;
@@ -129,9 +123,7 @@ void myVector<T>::pushBack(T obj)
 {
     if(lenght<maxLenght){
         data[lenght++] = obj;
-        printf("push back method invoked\n");
     }else{
-        printf("push back method with relocation invoked\n");
         //ok nie mamy juz miejsca w pamieci wolnej na nowe obiekty wiec trzeba przelokowac zasoby
             T *dataTEMP = data;
             unsigned maxLengtTemp = maxLenght;
@@ -153,7 +145,6 @@ unsigned myVector<T>::getlenght(void) {
 template<typename T>
 myVector<T> &myVector<T>::operator=(const myVector<T> &val)
 {
-    printf("coppy assigment operator invoked\n");
     delete[] data;
     data = new T[val.maxLenght];
     maxLenght = val.maxLenght;

@@ -60,4 +60,51 @@ std::vector<std::pair<int, int>> ObiektFunkcyjnyOtoczenia::operator()(std::pair<
 }
 
 
+class obiektFunkcyjnyOtoczeniaV2
+{
+    private:
+        double radius;
+        bool isInRadius(std::pair<int, int> x, std::pair<int, int> y, double max_distance);
+
+    public:
+        obiektFunkcyjnyOtoczeniaV2(int radius) : radius(radius) {}
+        myVector<std::pair<int, int>> operator()(std::pair<int, int>);
+};
+
+bool obiektFunkcyjnyOtoczeniaV2::isInRadius(std::pair<int, int> x, std::pair<int, int> y, double max_distance) {
+
+    double  xf=x.first,
+            xs=x.second,
+            yf=y.first,
+            ys=y.second,
+            distance;
+    distance = sqrt(pow(xf-yf,2)+pow(xs-ys,2));
+    if(distance<=max_distance)
+        return true;
+    else
+        return false;
+}
+
+myVector<std::pair<int, int>> obiektFunkcyjnyOtoczeniaV2::operator()(std::pair<int, int>pkt)
+{
+
+    myVector<std::pair<int, int>> to_return;
+
+    for(int i=pkt.first-radius;i<=pkt.first+radius;i++)
+    {
+        for(int j=pkt.second-radius;j<=pkt.second+radius;j++)
+        {
+
+            std::pair<int,int> tmp{i,j};
+            if(isInRadius(pkt,tmp,radius)) // && !(i==pkt.first && j==pkt.second)
+            {
+                to_return.pushBack(std::move(tmp));
+            }
+        }
+    }
+
+    return to_return;
+}
+
+
 #endif //GAME_OBIEKTFUNKCYJNYOTOCZENIA_H

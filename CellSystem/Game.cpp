@@ -8,8 +8,8 @@
 #include "Game.h"
 #include "Game.h"
 #include <algorithm>
-#include "ObiektFunkcyjnyOtoczenia.h"
 #include "myVector.h"
+#include "ObiektFunkcyjnyOtoczenia.h"
 
 
 
@@ -46,17 +46,22 @@ Game::Game(): m_window("simple psedu cell simulation", sf::Vector2u(2000,2000)){
     blockmap[poczatkowa]->setAsLifeCell();
 
     ObiektFunkcyjnyOtoczenia promien15{15};
-    ObiektFunkcyjnyOtoczenia promien20{20};
 
-    const std::vector<std::pair<int, int>> &neighborhood = promien20(poczatkowa);
-    for(auto c:neighborhood)
+    obiektFunkcyjnyOtoczeniaV2 promien15v2{15};
+    obiektFunkcyjnyOtoczeniaV2 promien20v2{20};
+
+
+
+    myVector<std::pair<int,int>> neighborhoodv2 = promien20v2(poczatkowa);
+
+    for(auto c:neighborhoodv2)
         if(c!=poczatkowa )blockmap[c]->setAsObstacleCell();
 
     const std::vector<std::pair<int, int>> &neighborhood1 = promien15(poczatkowa);
     for(auto c:neighborhood1)
         if(c!=poczatkowa)blockmap[c]->setAsFloorCell();
 
-    for(auto c:neighborhood)
+    for(auto c:neighborhoodv2)
     {
         if(c.first==n_of_blocks/2 && c.second>n_of_blocks/2)
         {
@@ -78,7 +83,7 @@ Game::Game(): m_window("simple psedu cell simulation", sf::Vector2u(2000,2000)){
 
     }
 
-    myVector<int> proszekurwadzialaj{};
+
 
 
 }
