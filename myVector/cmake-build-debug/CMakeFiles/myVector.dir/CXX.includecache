@@ -15,8 +15,12 @@ myVector.h
 /home/tomek/Documents/C++/myVector/myVector.h
 initializer_list
 -
+cstdio
+-
 myVectorException.h
 /home/tomek/Documents/C++/myVector/myVectorException.h
+memory
+-
 
 /home/tomek/Documents/C++/myVector/myVectorException.h
 

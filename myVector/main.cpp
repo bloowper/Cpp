@@ -2,8 +2,8 @@
 #include "myVector.h"
 using namespace std;
 
-template<typename T>
-void funkcja_do_testowania_move_constructora(myVector<T>& );
+
+void funkcja_do_testowania_move_constructora(myVector<myVector<string>>&);
 
 
 
@@ -49,10 +49,19 @@ int main() {
         printf("%d ",i);cout<<endl;
 
 
-    //testy konstruktora przenoszacego
-    myVector<string> vector2{"zero"};
-    string &basicString = vector2[0];
-    std::cout<<basicString<<endl;
+    //test metody pushbac
+    cout<<"metoda push back dla 30 stringow"<<endl;
+    myVector<string> vector2;
+    for(int i=0;i<30;i++)
+    {
+        string temp{"test"};
+        vector2.pushBack(temp);
+    }
+
+    for(auto obj:vector2)
+        cout<<obj<<" ";cout<<" nOfObj "<<vector2.getlenght()<<endl;
+
+
 
 
 
@@ -61,7 +70,7 @@ int main() {
 
 
 template<typename T>
-void funkcja_do_testowania_move_constructora(myVector<T>& )
+void funkcja_do_testowania_move_constructora(myVector<myVector<string>>& vect)
 {
 
 }

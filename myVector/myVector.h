@@ -7,7 +7,7 @@
 #include "myVectorException.h"
 #ifndef MYVECTOR_MYVECTOR_H
 #define MYVECTOR_MYVECTOR_H
-
+#include <memory>
 
 
 template<typename T>
@@ -19,14 +19,13 @@ public:
     myVector(std::initializer_list<T> initializerList);
     myVector(myVector&);//coppy constructor
     myVector(myVector &&);//move constructor
-
     virtual ~myVector();
     T& operator[](int index);
     T* begin();
     T* end();
     void pushBack(T obj);
-    void pushBack(T& obj);
-    void pushBack(T&& obj);
+    unsigned getlenght(void);
+
 private:
     T *data;
     unsigned lenght;
@@ -73,10 +72,11 @@ myVector<T>::~myVector()
         //mialem dlugo problem z typami bardziej zawansowanymi np dla stringa:
         //wywolywalo sie usuniecie pojedynczego elementu
         //i rzucalo blad naruszenia pamieci ;/
-        if(maxLenght>1||sizeof(data)>1)
-        delete[] data;
-        else
-        delete data;
+
+            if (maxLenght > 1 || sizeof(data) > 1)
+                delete[] data;
+            else
+                delete data;
         maxLenght = 0;
         lenght = 0;
         printf("free up heap memory\n");
@@ -121,6 +121,31 @@ myVector<T>::myVector(myVector &&l)
     l.data = nullptr;
     l.maxLenght = 0;
     l.lenght = 0;
+}
+
+template<typename T>
+void myVector<T>::pushBack(T obj)
+{
+    if(lenght<maxLenght){
+        data[lenght++] = obj;
+        printf("push back method invoked\n");
+    }else{
+        printf("push back method with relocation invoked\n");
+        //ok nie mamy juz miejsca w pamieci wolnej na nowe obiekty wiec trzeba przelokowac zasoby
+            T *dataTEMP = data;
+            unsigned maxLengtTemp = maxLenght;
+            maxLenght += 20;
+            try{data = new T[maxLenght];} catch (std::bad_alloc) { throw std::bad_alloc{};}
+            for (int i = 0; i < lenght; i++)
+                data[i] = dataTEMP[i];
+            data[lenght++] = obj;
+            delete[] dataTEMP;
+    }
+}
+
+template<typename T>
+unsigned myVector<T>::getlenght(void) {
+    return lenght;
 }
 
 
