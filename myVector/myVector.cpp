@@ -3,3 +3,10 @@
 //
 
 #include "myVector.h"
+
+
+#include <initializer_list>
+#include <cstdio>
+#include "myVectorException.h"
+#include <memory>
+

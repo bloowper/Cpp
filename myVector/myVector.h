@@ -22,7 +22,7 @@ public:
     virtual ~myVector();
     T& operator[](int index);
     myVector<T>& operator=(const myVector<T>& val);
-    myVector<T>& operator=(const myVector<T>&& val);
+    myVector<T>& operator=(myVector<T>&& val);
     T* begin();
     T* end();
     void pushBack(T obj);
@@ -89,7 +89,7 @@ T &myVector<T>::operator[](int index) {
     printf("operator [(int)] invoked\n");
     if(index<0 || index>lenght)
     {
-        throw outOfBound();
+        throw std::out_of_range{"out of range"};
     }
     return data[index];
 }
@@ -127,7 +127,6 @@ myVector<T>::myVector(myVector &&l)
 template<typename T>
 void myVector<T>::pushBack(T obj)
 {
-    printf("copy pushback invoked\n");
     if(lenght<maxLenght){
         data[lenght++] = obj;
         printf("push back method invoked\n");
@@ -154,7 +153,7 @@ unsigned myVector<T>::getlenght(void) {
 template<typename T>
 myVector<T> &myVector<T>::operator=(const myVector<T> &val)
 {
-    printf("coppy assigment operator invoked\n");
+    printf("copppy assigment operator invoked\n");
     delete[] data;
     data = new T[val.maxLenght];
     maxLenght = val.maxLenght;
@@ -165,7 +164,7 @@ myVector<T> &myVector<T>::operator=(const myVector<T> &val)
 }
 
 template<typename T>
-myVector<T>& myVector<T>::operator=(const myVector<T> &&val) {
+myVector<T>& myVector<T>::operator=(myVector<T> &&val) {
     delete[] data;
     data = val.data;
     lenght=val.lenght;
@@ -173,6 +172,9 @@ myVector<T>& myVector<T>::operator=(const myVector<T> &&val) {
     val.data= nullptr;
     val.maxLenght=0;
     val.lenght=0;
+    //teoretycznie nie potrzebuje juz zmieniac wartosci zmiennej val przekazanej jako obiekt move
+    //bo wystarczy go przygotowac do usuniecia poprzez przypisanie nullptr do jego wskaznika na danych
+    //pozbyc sie sytuacji ze zostanie usunieta pamiec ktora powinna sie znajdoweac w nowym wektorze
 }
 
 

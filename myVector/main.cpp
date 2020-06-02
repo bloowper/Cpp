@@ -6,7 +6,49 @@ using namespace std;
 
 void funkcja_do_testowania_move_constructora(myVector<myVector<string>>&);
 
+class classfordebuge{
+private:
+    int *variable;
+public:
+    classfordebuge()
+    :variable{new int}
+    {
 
+    }
+    classfordebuge(int var)
+    :classfordebuge{}
+    {
+        *variable = var;
+    }
+    ~classfordebuge()
+    {
+        delete variable;
+    }
+    classfordebuge(const classfordebuge&  val)
+    :variable{new int}
+    {
+        printf("debuge coppy constructor\n");
+        *variable = *val.variable;
+    }
+    classfordebuge(classfordebuge&& val)
+    {
+        variable = val.variable;
+        val.variable = nullptr;
+        printf("debuge move constructor\n");
+    }
+
+    classfordebuge& operator=(const classfordebuge & val)
+    {
+        *variable=*val.variable;
+        return *this;
+    }
+
+    int& getvalue()
+    {
+        return *variable;
+    }
+
+};
 
 int main() {
 
@@ -71,13 +113,37 @@ int main() {
         vector3.pushBack(myVector<string>{"hello"," world"," sample"});
     }
 
-    for(auto obj:vector3)
+    for(auto &obj:vector3)
     {
-        for(auto ob:obj)
+        for(auto &ob:obj)
             cout<<ob<<" "<<"test";
         cout<<endl;
     }
 
+
+
+    myVector<string> vector4;
+    vector4.pushBack(string{"okon"});
+
+
+    myVector<int> vector6{};
+    for(int i=0;i<10;i++)
+    {
+        vector6.pushBack(i);
+        cout<<vector6[vector6.getlenght()-1]<<" ";
+    }
+
+
+    printf("test dla obiektu do z dynamiczna pamiecia\n");
+    myVector<classfordebuge> vector5{classfordebuge{1},classfordebuge{2}};
+    for(auto i:{2,5,10,15,20})
+    {
+        vector5.pushBack(classfordebuge{i});
+    }
+
+
+    for(auto obj:vector5)
+        cout<<obj.getvalue()<<"<value"<<" ";
 
 
 
