@@ -84,10 +84,13 @@ Game::Game(): m_window("simple psedu cell simulation", sf::Vector2u(2000,2000)){
     }
 
 
+    obiektFunkcyjnyOtoczeniaV2 promien8{8};
+    myVector<std::pair<int,int>>  otoczeniePromien8BrzegMapy = promien8(std::make_pair(10, 10));
+//    std::for_each(otoczeniePromien8BrzegMapy.begin(),otoczeniePromien8BrzegMapy.end(),)
 
 
 }
-
+In
 Game::~Game(){ }
 
 sf::Time Game::GetElapsed(){ return m_elapsed; }
