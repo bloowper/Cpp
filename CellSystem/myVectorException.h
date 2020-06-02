@@ -5,6 +5,9 @@
 #ifndef MYVECTOR_MYVECTOREXCEPTION_H
 #define MYVECTOR_MYVECTOREXCEPTION_H
 
+
+//nie uzywany
+
 class myVectorException{
 
 };

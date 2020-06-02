@@ -9,11 +9,16 @@
 #include <memory>
 
 
+//ZAGADNIENIA
+//zarzadzanie pamiecia dynamiczna
+//przeciazenia operatorow
+//bbegin end do uzywania w petlach for auto i foreach
+//
+
 template<typename T>
 class myVector {
 public:
     myVector();
-//    myVector(T); nie wiem czy powinien istniec ten konstruktor, robia sie przez niego syytuacje dwuznacze
     myVector(unsigned size);
     myVector(std::initializer_list<T> initializerList);
     myVector(myVector&);//coppy constructor
@@ -37,7 +42,7 @@ template<typename T>
 myVector<T>::myVector(unsigned int size)
         :data{new T[size]},maxLenght{size},lenght{0}
 {
-    printf("size constructor invoked \n");
+
 
 }
 
@@ -45,14 +50,14 @@ template<typename T>
 myVector<T>::myVector()
         :myVector<T>::myVector(20)
 {
-    printf("No arg constructor invoked\n");
+
 }
 
 template<typename T>
 myVector<T>::myVector(std::initializer_list<T> initializerList)
         :myVector<T>::myVector(initializerList.size())
 {
-    printf("std::initializer list constructor invoked \n");
+
     lenght = initializerList.size();
     int i=0;
     for( const T *initP = initializerList.begin();initP!=initializerList.end();initP++)
@@ -65,7 +70,7 @@ myVector<T>::myVector(std::initializer_list<T> initializerList)
 template<typename T>
 myVector<T>::~myVector()
 {
-    printf("deconstructor invoked\n");
+
     if(maxLenght>0)
     {
 
@@ -83,9 +88,10 @@ myVector<T>::~myVector()
     }
 }
 
+//ZAGADNIENIE
+//OPERATOR
 template<typename T>
 T &myVector<T>::operator[](int index) {
-    printf("operator [(int)] invoked\n");
     if(index<0 || index>lenght)
     {
         throw std::out_of_range{"out of range"};
@@ -103,16 +109,20 @@ T *myVector<T>::end() {
     return &data[lenght];
 }
 
+//ZAGADNIENIE
+//COPPY CONSTRUCTOR
 template<typename T>
 myVector<T>::myVector(myVector &l)
         :data{new T[l.maxLenght]}, lenght{l.lenght}, maxLenght{l.maxLenght}
 {
-    printf("coppy construcotr invoked\n");
     for(int i=0;i<l.lenght;i++)
         data[i]=l.data[i];
 
 }
 
+
+//ZAGADNIENIE
+//MOVE CONSTRUCTOR
 template<typename T>
 myVector<T>::myVector(myVector &&l)
         :data{l.data}, lenght{l.lenght}, maxLenght{l.maxLenght}
@@ -128,9 +138,8 @@ void myVector<T>::pushBack(T obj)
 {
     if(lenght<maxLenght){
         data[lenght++] = obj;
-        printf("push back method invoked\n");
+
     }else{
-        printf("push back method with relocation invoked\n");
         //ok nie mamy juz miejsca w pamieci wolnej na nowe obiekty wiec trzeba przelokowac zasoby
         T *dataTEMP = data;
         unsigned maxLengtTemp = maxLenght;
@@ -152,7 +161,6 @@ unsigned myVector<T>::getlenght(void) {
 template<typename T>
 myVector<T> &myVector<T>::operator=(const myVector<T> &val)
 {
-    printf("copppy assigment operator invoked\n");
     delete[] data;
     data = new T[val.maxLenght];
     maxLenght = val.maxLenght;

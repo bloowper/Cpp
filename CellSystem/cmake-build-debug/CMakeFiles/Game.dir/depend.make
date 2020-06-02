@@ -3,9 +3,11 @@
 
 CMakeFiles/Game.dir/Game.cpp.o: ../Game.cpp
 CMakeFiles/Game.dir/Game.cpp.o: ../Game.h
+CMakeFiles/Game.dir/Game.cpp.o: ../ObiektFunkcyjnyOtoczenia.h
 CMakeFiles/Game.dir/Game.cpp.o: ../Window.h
 CMakeFiles/Game.dir/Game.cpp.o: ../abstractCell.h
 CMakeFiles/Game.dir/Game.cpp.o: ../cell.h
+CMakeFiles/Game.dir/Game.cpp.o: ../myVector.h
 
 CMakeFiles/Game.dir/Window.cpp.o: ../Window.cpp
 CMakeFiles/Game.dir/Window.cpp.o: ../Window.h

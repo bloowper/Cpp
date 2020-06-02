@@ -8,6 +8,8 @@
 #include <vector>
 #include "abstractCell.h"
 
+//zagadnienie
+//dziedziczenie
 class cell :public sf::RectangleShape, public abstractCell
 {
 public:
@@ -31,6 +33,8 @@ public:
 
 
 private:
+    //zagadnienie
+    //const variables in class
     const sf::Color podloze{0,194,255};
     const sf::Color zywa{67,255,0};
     const sf::Color martwa{255,61,0};

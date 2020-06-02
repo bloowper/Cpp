@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug"/>
+				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug"/>
+				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug"/>
+				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Game">
-				<Option output="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug"/>
+				<Option output="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 Game"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 Game"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Game/fast">
-				<Option output="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug"/>
+				<Option output="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,44 +77,53 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 Game/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 Game/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.cpp">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.cpp">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Game.h">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Game.h">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Window.cpp">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/ObiektFunkcyjnyOtoczenia.h">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/Window.h">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Window.cpp">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/abstractCell.h">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/Window.h">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.cpp">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/abstractCell.h">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cell.h">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cell.cpp">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/main.cpp">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cell.h">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/main.h">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/main.cpp">
 			<Option target="Game"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/CMakeLists.txt">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/main.h">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/myVector.h">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/myVectorException.h">
+			<Option target="Game"/>
+		</Unit>
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/Game/cmake_modules/FindSFML.cmake">
+		<Unit filename="/home/tomek/Documents/C++/sfml/game_of_life-test/CellSystem/cmake_modules/FindSFML.cmake">
 			<Option virtualFolder="CMake Files\cmake_modules\"/>
 		</Unit>
 	</Project>

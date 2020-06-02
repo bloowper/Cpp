@@ -7,6 +7,9 @@
 #include <utility>
 
 
+//ZAGADNIENIE
+//FUNKCJE CZUSTO WIRTUALNE
+//nazwal bym to interfacem
 class abstractCell {
 
 public:

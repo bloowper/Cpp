@@ -46,7 +46,6 @@ Game::Game(): m_window("simple psedu cell simulation", sf::Vector2u(2000,2000)){
     blockmap[poczatkowa]->setAsLifeCell();
 
     ObiektFunkcyjnyOtoczenia promien15{15};
-
     obiektFunkcyjnyOtoczeniaV2 promien15v2{15};
     obiektFunkcyjnyOtoczeniaV2 promien20v2{20};
 
@@ -84,13 +83,26 @@ Game::Game(): m_window("simple psedu cell simulation", sf::Vector2u(2000,2000)){
     }
 
 
+    //ZAGADNIENIE
+    //petla for_each + funkcja lambda
+    //obiekt funkcyjny z przeciazonym operatorem ()
+    //wlasny wektor z konstruktorami obslugujacymi heap memory
+    //+obsluga wskaznikow we wlasnym kontenerze *begin *end
     obiektFunkcyjnyOtoczeniaV2 promien8{8};
     myVector<std::pair<int,int>>  otoczeniePromien8BrzegMapy = promien8(std::make_pair(10, 10));
-//    std::for_each(otoczeniePromien8BrzegMapy.begin(),otoczeniePromien8BrzegMapy.end(),)
+    try {
+        std::for_each(otoczeniePromien8BrzegMapy.begin(), otoczeniePromien8BrzegMapy.end(),
+                      [&](std::pair<int, int> cord) { blockmap[cord]->setAsObstacleCell(); });
+    }
+    catch (std::out_of_range &exception)
+    {
+
+    }
+
 
 
 }
-In
+
 Game::~Game(){ }
 
 sf::Time Game::GetElapsed(){ return m_elapsed; }
@@ -147,6 +159,8 @@ void Game::Update() {
             const std::vector<std::pair<int, int>> &neighborhood = returnNeighborhood(key, zasieg);
             for(auto keyN:neighborhood)
             {
+                //ZAGADNIENIE
+                //STL
                 const std::vector<std::pair<int, int>>::const_iterator &iterator = std::find(extractKeys.begin(),
                                                                                              extractKeys.end(), keyN);
                 if(iterator!=extractKeys.end())
@@ -183,6 +197,28 @@ void Game::Update() {
         }
     }
 
+
+    //zbieranie statystyk
+    //trzeba napisac do lepiej
+    //dodac dwie struktury
+    //jedna od trzymania danych z aktualnego tiku
+    //druga z poprzedniego
+    //wtedy mozna by bylo jeszcze przyrost zapisywac
+    int calkowita_liczba =blockmap.size();
+    int liczba_zywych =0;
+    int liczba_martwych=0;
+    auto zliczanie = [&liczba_zywych,&liczba_martwych,this](std::pair<int,int> cord){
+        if(blockmap[cord]->isLifeCell())
+            liczba_zywych++;
+        if(blockmap[cord]->isDeathCell())
+            liczba_martwych++;
+    };
+    std::for_each(extractKeys.begin(),extractKeys.end(),zliczanie);
+    printf("|N %d|\t|zywe %d|\t|martwe %d|\n",calkowita_liczba,liczba_zywych,liczba_martwych);
+
+
+
+
 }
 
 void Game::Render(){
@@ -191,6 +227,8 @@ void Game::Render(){
     {
         for(int j=0;j<n_of_blocks;j++)
         {
+            //ZAGADNIENIE
+            //POLIMORFIZM
             m_window.Draw(*blockmap[std::pair<int,int>{i,j}]);
         }
     }
@@ -199,7 +237,8 @@ void Game::Render(){
 }
 
 
-
+//ZAGADNIENIE
+//template
 template<typename TK, typename TV>
 std::vector<TK> extract_keys(std::map<TK, TV> const& input_map) {
     std::vector<TK> retval;
