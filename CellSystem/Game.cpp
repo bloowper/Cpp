@@ -88,6 +88,7 @@ Game::Game(): m_window("simple psedu cell simulation", sf::Vector2u(2000,2000)){
     //obiekt funkcyjny z przeciazonym operatorem ()
     //wlasny wektor z konstruktorami obslugujacymi heap memory
     //+obsluga wskaznikow we wlasnym kontenerze *begin *end
+    //wyrazenie lambda
     obiektFunkcyjnyOtoczeniaV2 promien8{8};
     myVector<std::pair<int,int>>  otoczeniePromien8BrzegMapy = promien8(std::make_pair(10, 10));
     try {
@@ -160,7 +161,7 @@ void Game::Update() {
             for(auto keyN:neighborhood)
             {
                 //ZAGADNIENIE
-                //STL
+                //STL algorytmy
                 const std::vector<std::pair<int, int>>::const_iterator &iterator = std::find(extractKeys.begin(),
                                                                                              extractKeys.end(), keyN);
                 if(iterator!=extractKeys.end())
@@ -199,11 +200,7 @@ void Game::Update() {
 
 
     //zbieranie statystyk
-    //trzeba napisac do lepiej
-    //dodac dwie struktury
-    //jedna od trzymania danych z aktualnego tiku
-    //druga z poprzedniego
-    //wtedy mozna by bylo jeszcze przyrost zapisywac
+
     int calkowita_liczba =blockmap.size();
     int liczba_zywych =0;
     int liczba_martwych=0;
@@ -213,6 +210,7 @@ void Game::Update() {
         if(blockmap[cord]->isDeathCell())
             liczba_martwych++;
     };
+    //ZAGADNIENIE STL ALGORYTMY + FUNKCJA LAMBDA
     std::for_each(extractKeys.begin(),extractKeys.end(),zliczanie);
     printf("|N %d|\t|zywe %d|\t|martwe %d|\n",calkowita_liczba,liczba_zywych,liczba_martwych);
 

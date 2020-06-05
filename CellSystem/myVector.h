@@ -18,11 +18,13 @@
 template<typename T>
 class myVector {
 public:
+    //zagadnienie konstruktor
     myVector();
     myVector(unsigned size);
     myVector(std::initializer_list<T> initializerList);
     myVector(myVector&);//coppy constructor
     myVector(myVector &&);//move constructor
+    //zagadnienie dekonstruktor
     virtual ~myVector();
     T& operator[](int index);
     myVector<T>& operator=(const myVector<T>& val);
